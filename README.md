@@ -1,6 +1,12 @@
 <h1 align="center">Quotes</h1>
 
 <div align="center">
+    <a href="https://github.com/imadatyatalah/quotes/">
+        <img src="./public/logo.png" alt="Quotes logo" width="50" />
+    </a>
+</div>
+
+<div align="center">
 
 <a href="">View Demo</a>
 ·
