@@ -10,10 +10,13 @@ import "@/styles/globals.css";
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
   return (
-    <ThemeProvider defaultTheme="system" attribute="class">
+    <>
       <DefaultSeo {...SEO} />
-      <Component {...pageProps} />
-    </ThemeProvider>
+
+      <ThemeProvider defaultTheme="system" attribute="class">
+        <Component {...pageProps} />
+      </ThemeProvider>
+    </>
   );
 };
 
