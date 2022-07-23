@@ -1,11 +1,13 @@
 import create from "zustand";
 import { persist } from "zustand/middleware";
 
-import { TQuote } from "@/types/quote";
+import type { TQuote } from "@/types/quote";
 
 interface QuortesState {
   quotes: TQuote[];
   addQuote: (quote_content: string, quote_author: string) => void;
+  removeAllQuotes: () => void;
+  removeQuote: (dae: Date) => void;
 }
 
 const useQuotes = create<QuortesState>(
@@ -15,7 +17,16 @@ const useQuotes = create<QuortesState>(
       quotes: [],
       addQuote: (quote_content: string, quote_author: string) =>
         set((state) => ({
-          quotes: [...state.quotes, { quote_content, quote_author }],
+          quotes: [
+            ...state.quotes,
+            { quote_content, quote_author, date: new Date() },
+          ],
+        })),
+      removeAllQuotes: () => set({ quotes: [] }),
+      // here `date` plays the role of id
+      removeQuote: (date: Date) =>
+        set((state) => ({
+          quotes: state.quotes.filter((quote) => quote.date !== date),
         })),
     }),
     {
