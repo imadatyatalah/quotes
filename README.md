@@ -3,11 +3,12 @@
         <img src="./public/logo.png" alt="Quotes logo" width="50" />
     </a>
     <h1 align="center">Quotes</h1>
+    Keep your quotes in one place, Share them with your friends.
 </div>
 
 <div align="center">
 
-<a href="">View Demo</a>
+<a href="https://quotes.imadatyat.me">View Demo</a>
 ·
 <a href="https://github.com/imadatyatalah/quotes/issues">Report Bug</a>
 ·
@@ -16,6 +17,8 @@
 </div>
 
 ## About The Project
+
+Quotes is a simple web application that allows you to store your quotes and share them with your friends.
 
 ### The Idea
 

@@ -1,4 +1,4 @@
 module.exports = {
-  siteUrl: "",
+  siteUrl: "https://quotes.imadatyat.me",
   generateRobotsTxt: true,
 };
