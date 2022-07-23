@@ -15,15 +15,6 @@
 
 </div>
 
-<div align="center">
-
-[![CodeFactor](https://www.codefactor.io/repository/github/imadatyatalah/quotes/badge?style=for-the-badge)](https://www.codefactor.io/repository/github/imadatyatalah/quotes)
-[![MIT License](https://img.shields.io/github/license/imadatyatalah/quotes?color=blue&style=for-the-badge)](https://github.com/imadatyatalah/quotes/blob/main/LICENSE)
-[![Stargazers](https://img.shields.io/github/stars/imadatyatalah/quotes?style=for-the-badge)](https://github.com/imadatyatalah/quotes/stargazers)
-[![Forks](https://img.shields.io/github/forks/imadatyatalah/quotes?style=for-the-badge)](https://github.com/imadatyatalah/quotes/network/members)
-
-</div>
-
 ## About The Project
 
 ### The Idea
@@ -40,14 +31,14 @@ The idea came up after I started writing a quote that I found on the internet in
 
 ### Features
 
-[x] Create quotes with it's author.
-[x] Delete one quote.
-[x] Delete all quotes.
-[ ] Edit quotes.
-[ ] Search quotes.
-[ ] Sort quotes.
-[ ] Paginate quotes.
-[ ] Share quotes.
+- [x] Create quotes with it's author.
+- [x] Delete one quote.
+- [x] Delete all quotes.
+- [ ] Edit quotes.
+- [ ] Search quotes.
+- [ ] Sort quotes.
+- [ ] Paginate quotes.
+- [ ] Share quotes.
 
 ### Screenshot
 

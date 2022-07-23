@@ -41,7 +41,7 @@ const QuoteForm = () => {
         />
 
         <button
-          className="bg-[#09bc8a] text-white rounded-md py-2 w-auto"
+          className="bg-primary-400 text-white rounded-md py-2 w-auto"
           type="submit"
         >
           Submit
