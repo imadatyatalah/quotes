@@ -14,6 +14,9 @@ const QuoteForm = () => {
     };
 
     addQuote(formElements.quote_content.value, formElements.quote_author.value);
+
+    formElements.quote_content.value = "";
+    formElements.quote_author.value = "";
   };
 
   return (
