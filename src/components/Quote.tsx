@@ -4,7 +4,7 @@ import useQuotes from "@/stores/useQuotes";
 import type { TQuote } from "@/types/quote";
 
 const Quote = ({ quote_content, quote_author, date }: TQuote) => {
-  const removeQuote = useQuotes((state) => state.removeQuote);
+  const removeQuoteByDate = useQuotes((state) => state.removeQuoteByDate);
 
   return (
     <div className="flex items-center justify-center">
@@ -19,7 +19,7 @@ const Quote = ({ quote_content, quote_author, date }: TQuote) => {
       <div>
         <button
           className="bg-red-500 p-1 rounded-full text-white"
-          onClick={() => removeQuote(date)}
+          onClick={() => removeQuoteByDate(date)}
           type="button"
         >
           <TrashIcon />

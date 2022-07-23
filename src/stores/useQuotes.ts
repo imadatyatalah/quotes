@@ -7,7 +7,7 @@ interface QuortesState {
   quotes: TQuote[];
   addQuote: (quote_content: string, quote_author: string) => void;
   removeAllQuotes: () => void;
-  removeQuote: (dae: Date) => void;
+  removeQuoteByDate: (date: Date) => void;
 }
 
 const useQuotes = create<QuortesState>(
@@ -24,7 +24,7 @@ const useQuotes = create<QuortesState>(
         })),
       removeAllQuotes: () => set({ quotes: [] }),
       // here `date` plays the role of id
-      removeQuote: (date: Date) =>
+      removeQuoteByDate: (date: Date) =>
         set((state) => ({
           quotes: state.quotes.filter((quote) => quote.date !== date),
         })),
