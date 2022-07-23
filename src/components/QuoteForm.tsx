@@ -27,7 +27,7 @@ const QuoteForm = () => {
           name="quote_content"
           id="quote_content"
           placeholder={`“Love, love again.”`}
-          className="block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+          className="input"
           required
         />
 
@@ -36,12 +36,12 @@ const QuoteForm = () => {
           name="quote_author"
           id="quote_author"
           placeholder="John Doe"
-          className="block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+          className="input"
           required
         />
 
         <button
-          className="bg-primary-400 text-white rounded-md py-2 w-auto"
+          className="bg-primary-400 text-white rounded-lg py-2 w-auto"
           type="submit"
         >
           Submit

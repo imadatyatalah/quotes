@@ -8,22 +8,24 @@ const Quote = ({ quote_content, quote_author, date }: TQuote) => {
 
   return (
     <div className="flex items-center justify-center">
-      <div className="border rounded w-full mr-2">
-        <h2>
-          <q>{quote_content}</q>
-        </h2>
+      <div className="flex justify-between border text-left rounded-lg w-full p-2 mr-2">
+        <div>
+          <h2 className="font-medium mb-1">
+            <q>{quote_content}</q>
+          </h2>
 
-        <p>{quote_author}</p>
-      </div>
+          <p className="text-sm">{quote_author}</p>
+        </div>
 
-      <div>
-        <button
-          className="bg-red-500 p-1 rounded-full text-white"
-          onClick={() => removeQuoteByDate(date)}
-          type="button"
-        >
-          <TrashIcon />
-        </button>
+        <div>
+          <button
+            className="bg-red-500 p-1 rounded-lg text-white"
+            onClick={() => removeQuoteByDate(date)}
+            type="button"
+          >
+            <TrashIcon />
+          </button>
+        </div>
       </div>
     </div>
   );

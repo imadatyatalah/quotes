@@ -1,9 +1,8 @@
 import { useEffect, useState } from "react";
 
+import Quote from "@/components/Quote";
 import Callout from "@/components/Callout";
 import useQuotes from "@/stores/useQuotes";
-import TrashIcon from "@/icons/TrashIcon";
-import Quote from "@/components/Quote";
 
 import type { TQuote } from "@/types/quote";
 
@@ -21,11 +20,11 @@ const Quotes = () => {
     <div>
       {quotesState.length !== 0 ? (
         <button
-          className="bg-red-500 p-1 rounded-full text-white"
+          className="bg-red-500 py-1 px-4 font-medium mb-2 rounded-lg text-white"
           onClick={removeAllQuotes}
           type="button"
         >
-          <TrashIcon />
+          Delete all quotes
         </button>
       ) : null}
 
