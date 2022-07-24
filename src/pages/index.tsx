@@ -8,9 +8,9 @@ const Home = () => {
     <>
       <NextSeo title="Home" />
 
-      <section className="py-10 space-y-10 sm:w-[500px] sm:mx-auto sm:text-center">
+      <section className="space-y-10 py-10 sm:mx-auto sm:w-[500px] sm:text-center">
         <div>
-          <h1 className="text-5xl font-bold text-center text-primary-400">
+          <h1 className="text-center text-5xl font-bold text-primary-400">
             Quotes
           </h1>
         </div>

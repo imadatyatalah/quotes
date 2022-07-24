@@ -8,9 +8,9 @@ const Quote = ({ quote_content, quote_author, date }: TQuote) => {
 
   return (
     <div className="flex items-center justify-center">
-      <div className="flex justify-between border text-left rounded-lg w-full p-2 mr-2">
+      <div className="mr-2 flex w-full justify-between rounded-lg border p-2 text-left">
         <div>
-          <h2 className="font-medium mb-1">
+          <h2 className="mb-1 font-medium">
             <q>{quote_content}</q>
           </h2>
 
@@ -19,7 +19,7 @@ const Quote = ({ quote_content, quote_author, date }: TQuote) => {
 
         <div>
           <button
-            className="bg-red-500 p-1 rounded-lg text-white"
+            className="rounded-lg bg-red-500 p-1 text-white"
             onClick={() => removeQuoteByDate(date)}
             type="button"
           >

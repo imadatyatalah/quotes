@@ -1,9 +1,9 @@
 const Footer = () => {
   return (
-    <footer className="text-center font-semibold pb-10">
+    <footer className="pb-10 text-center font-semibold">
       Made with ❤️ by{" "}
       <a
-        className="underline text-blue-600 hover:text-blue-800"
+        className="text-blue-600 underline hover:text-blue-800"
         href="https://www.imadatyat.me"
         target="_blank"
         rel="noopener noreferrer"

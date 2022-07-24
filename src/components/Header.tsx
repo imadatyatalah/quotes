@@ -6,7 +6,7 @@ import Logo from "public/logo.png";
 const Header = () => {
   return (
     <header className="py-2">
-      <div className="flex justify-between items-center">
+      <div className="flex items-center justify-between">
         <div>
           <Link href="/">
             <a>
@@ -22,7 +22,7 @@ const Header = () => {
         </div>
 
         <nav>
-          <ul className="flex space-x-4 text-primary-300 font-medium sm:text-lg">
+          <ul className="flex space-x-4 font-medium text-primary-300 sm:text-lg">
             <li>
               <Link href="/random">
                 <a>Random</a>

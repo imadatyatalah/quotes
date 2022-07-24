@@ -20,7 +20,7 @@ const Quotes = () => {
     <div>
       {quotesState.length !== 0 ? (
         <button
-          className="bg-red-500 py-1 px-4 font-medium mb-2 rounded-lg text-white"
+          className="mb-2 rounded-lg bg-red-500 py-1 px-4 font-medium text-white"
           onClick={removeAllQuotes}
           type="button"
         >
