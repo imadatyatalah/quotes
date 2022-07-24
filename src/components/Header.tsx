@@ -5,7 +5,7 @@ import Logo from "public/logo.png";
 
 const Header = () => {
   return (
-    <header className="px-4 py-2 sm:px-10">
+    <header className="py-2">
       <div className="flex justify-between items-center">
         <div>
           <Link href="/">
