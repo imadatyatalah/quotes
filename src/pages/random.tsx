@@ -18,12 +18,14 @@ const Random = () => {
     <>
       <NextSeo title="Random quotes" />
 
-      <section>
-        <h1 className="font-medium mb-1">
-          <q>{data.content}</q>
-        </h1>
+      <section className="py-10">
+        <div className="text-center">
+          <h1 className="mb-4 text-4xl font-bold text-primary-400">
+            <q>{data.content}</q>
+          </h1>
 
-        <p className="text-sm">{data.author}</p>
+          <p className="font-medium">By {data.author}</p>
+        </div>
       </section>
     </>
   );

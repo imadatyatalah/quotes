@@ -24,6 +24,12 @@ const Header = () => {
         <nav>
           <ul className="flex space-x-4 text-primary-300 font-medium sm:text-lg">
             <li>
+              <Link href="/random">
+                <a>Random</a>
+              </Link>
+            </li>
+
+            <li>
               <Link href="/signup">
                 <a>Sign up</a>
               </Link>
