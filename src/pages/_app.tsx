@@ -4,8 +4,7 @@ import type { AppProps } from "next/app";
 import { ThemeProvider } from "next-themes";
 import { DefaultSeo } from "next-seo";
 
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
+import GlobalLayout from "@/layout/Global";
 import SEO from "next-seo.config";
 
 import "@/styles/globals.css";
@@ -16,9 +15,9 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
       <DefaultSeo {...SEO} />
 
       <ThemeProvider defaultTheme="light" attribute="class">
-        <Header />
-        <Component {...pageProps} />
-        <Footer />
+        <GlobalLayout>
+          <Component {...pageProps} />
+        </GlobalLayout>
       </ThemeProvider>
     </>
   );
