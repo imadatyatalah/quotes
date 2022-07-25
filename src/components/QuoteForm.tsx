@@ -22,23 +22,27 @@ const QuoteForm = () => {
   return (
     <div className="w-full">
       <form className="flex flex-col space-y-2" onSubmit={handleSubmit}>
-        <input
-          type="text"
-          name="quote_content"
-          id="quote_content"
-          placeholder={`“Love, love again.”`}
-          className="input"
-          required
-        />
+        <fieldset>
+          <input
+            type="text"
+            name="quote_content"
+            id="quote_content"
+            placeholder={`“Love, love again.”`}
+            className="input"
+            required
+          />
+        </fieldset>
 
-        <input
-          type="text"
-          name="quote_author"
-          id="quote_author"
-          placeholder="John Doe"
-          className="input"
-          required
-        />
+        <fieldset>
+          <input
+            type="text"
+            name="quote_author"
+            id="quote_author"
+            placeholder="John Doe"
+            className="input"
+            required
+          />
+        </fieldset>
 
         <button
           className="w-auto rounded-lg bg-primary-400 py-2 font-medium text-white"
