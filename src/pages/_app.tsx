@@ -13,7 +13,7 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
     <>
       <DefaultSeo {...SEO} />
 
-      <ThemeProvider defaultTheme="light" attribute="class">
+      <ThemeProvider defaultTheme="system" attribute="class">
         <GlobalLayout>
           <Component {...pageProps} />
         </GlobalLayout>
