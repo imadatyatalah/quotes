@@ -8,7 +8,7 @@ const Quote = ({ quote_content, quote_author, date }: TQuote) => {
 
   return (
     <div className="flex items-center justify-center">
-      <div className="mr-2 flex w-full justify-between rounded-lg border p-2 text-left">
+      <div className="mr-2 flex w-full justify-between rounded-lg border-2 border-gray-200 p-2 text-left dark:border-gray-700">
         <div>
           <h2 className="mb-1 font-medium">
             <q>{quote_content}</q>

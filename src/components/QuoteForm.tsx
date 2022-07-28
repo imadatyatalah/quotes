@@ -44,10 +44,7 @@ const QuoteForm = () => {
           />
         </fieldset>
 
-        <button
-          className="w-auto rounded-lg bg-primary-400 py-2 font-medium text-white"
-          type="submit"
-        >
+        <button className="button w-auto" type="submit">
           Submit
         </button>
       </form>

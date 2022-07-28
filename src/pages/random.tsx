@@ -11,8 +11,8 @@ const Random = () => {
     fetcher
   );
 
-  if (error) return <div>Failed to load</div>;
-  if (!data) return <div>Loading...</div>;
+  if (error) return <div className="text-center">Failed to load</div>;
+  if (!data) return <div className="text-center">Loading...</div>;
 
   return (
     <>

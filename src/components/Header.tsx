@@ -37,7 +37,7 @@ const Header = () => {
 
         <div className="flex items-center space-x-4">
           <nav>
-            <ul className="flex space-x-4 font-medium text-primary-300 sm:text-lg">
+            <ul className="flex space-x-4 font-medium text-primary-300 dark:text-primary-500 sm:text-lg">
               <li>
                 <Link href="/random">
                   <a>Random</a>
