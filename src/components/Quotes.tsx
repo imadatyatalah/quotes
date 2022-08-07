@@ -34,7 +34,7 @@ const Quotes = () => {
         ) : (
           <Callout emoji="💡">
             <p className="text-[#333333] dark:text-[#eaeaea]">
-              You have not created any quotes yet!
+              You do not have any quotes yet!
             </p>
           </Callout>
         )}
