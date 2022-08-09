@@ -13,7 +13,11 @@ const Quotes = () => {
   const removeAllQuotes = useQuotes((state) => state.removeAllQuotes);
 
   useEffect(() => {
-    setQuotesState(quotes);
+    setQuotesState(
+      quotes.sort(
+        (a, b) => new Date(b.date).valueOf() - new Date(a.date).valueOf()
+      )
+    );
   }, [quotes]);
 
   return (
