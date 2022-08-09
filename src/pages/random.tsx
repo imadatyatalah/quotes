@@ -2,7 +2,9 @@ import { NextSeo } from "next-seo";
 import useSWR from "swr";
 
 import { fetcher } from "@/lib/fetcher";
+import useQuotes from "@/stores/useQuotes";
 import DiceIcon from "@/icons/DiceIcon";
+import SaveIcon from "@/icons/SaveIcon";
 
 import type { RandomQuote } from "@/types/quote";
 
@@ -11,6 +13,8 @@ const Random = () => {
     "https://api.quotable.io/random",
     fetcher
   );
+
+  const addQuote = useQuotes((state) => state.addQuote);
 
   if (error) return <div className="text-center">Failed to load</div>;
   if (!data) return <div className="text-center">Loading...</div>;
@@ -29,12 +33,21 @@ const Random = () => {
             <p className="font-medium">By {data.author}</p>
           </div>
 
-          <div className="text-center">
+          <div className="space-x-2 text-center">
             <button
-              className="rounded-full bg-primary-500 p-5"
+              className="rounded-full bg-primary-400 p-4"
+              type="button"
               onClick={() => mutate()}
             >
               <DiceIcon />
+            </button>
+
+            <button
+              className="rounded-full bg-primary-400 p-4"
+              type="button"
+              onClick={() => addQuote(data.content, data.author)}
+            >
+              <SaveIcon />
             </button>
           </div>
         </div>
