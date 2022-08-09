@@ -30,24 +30,28 @@ const Random = () => {
               <q>{data.content}</q>
             </h1>
 
-            <p className="font-medium">By {data.author}</p>
+            <p className="font-medium">{data.author}</p>
           </div>
 
-          <div className="space-x-2 text-center">
+          <div className="flex justify-center space-x-2">
             <button
-              className="rounded-full bg-primary-400 p-4"
+              className="button flex items-center rounded-lg font-medium text-white"
               type="button"
               onClick={() => mutate()}
             >
               <DiceIcon />
+
+              <span className="ml-2">New random quote</span>
             </button>
 
             <button
-              className="rounded-full bg-primary-400 p-4"
+              className="button flex items-center rounded-lg font-medium text-white"
               type="button"
               onClick={() => addQuote(data.content, data.author)}
             >
               <SaveIcon />
+
+              <span className="ml-2">Save quote</span>
             </button>
           </div>
         </div>

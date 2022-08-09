@@ -58,7 +58,7 @@ const Header = () => {
                 setTheme(resolvedTheme === "light" ? "dark" : "light");
               }}
               type="button"
-              className="rounded-md p-2 hover:bg-gray-200 dark:hover:bg-gray-700"
+              className="rounded-lg p-2 hover:bg-gray-200 dark:hover:bg-gray-700"
               aria-label={
                 resolvedTheme === "light" ? "Dark Mode" : "Light Mode"
               }
