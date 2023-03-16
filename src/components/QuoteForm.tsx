@@ -1,5 +1,5 @@
 import useQuotes from "@/stores/useQuotes";
-import Input from "@/components/core/Inputs/Input";
+import Input from "@/components/core/Inputs";
 import Button from "@/components/core/Button";
 
 const QuoteForm = () => {

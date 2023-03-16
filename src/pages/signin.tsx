@@ -1,5 +1,5 @@
 import Button from "@/components/core/Button";
-import Input from "@/components/core/Inputs/Input";
+import Input from "@/components/core/Inputs";
 import { NextSeo } from "next-seo";
 
 const SignIn = () => {
