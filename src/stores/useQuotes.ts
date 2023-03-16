@@ -10,8 +10,7 @@ interface QuortesState {
   removeQuoteByDate: (date: Date) => void;
 }
 
-const useQuotes = create<QuortesState>(
-  // @ts-ignore
+const useQuotes = create<QuortesState>()(
   persist(
     (set) => ({
       quotes: [],

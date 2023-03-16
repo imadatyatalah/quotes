@@ -11,7 +11,8 @@ import type { RandomQuote } from "@/types/quote";
 const Random = () => {
   const { data, error, mutate } = useSWR<RandomQuote>(
     "https://api.quotable.io/random",
-    fetcher
+    fetcher,
+    { revalidateOnFocus: false }
   );
 
   const addQuote = useQuotes((state) => state.addQuote);
