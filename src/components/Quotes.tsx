@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 
 import Quote from "@/components/Quote";
-import Callout from "@/components/Callout";
 import useQuotes from "@/stores/useQuotes";
 
 import type { TQuote } from "@/types/quote";
