@@ -1,3 +1,4 @@
+import Button from "@/components/core/Button";
 import Input from "@/components/core/Inputs/Input";
 import { NextSeo } from "next-seo";
 
@@ -25,12 +26,7 @@ const SignIn = () => {
             />
           </div>
 
-          <button
-            className="w-auto rounded-lg bg-primary-400 py-2 font-medium text-white"
-            type="submit"
-          >
-            Sign in
-          </button>
+          <Button type="submit">Sign in</Button>
         </form>
       </section>
     </>

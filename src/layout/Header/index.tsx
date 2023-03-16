@@ -16,6 +16,10 @@ const Header = () => {
 
   useEffect(() => setMounted(true), []);
 
+  const handleMoodToggle = () => {
+    setTheme(resolvedTheme === "light" ? "dark" : "light");
+  };
+
   if (!mounted) return null;
 
   return (
@@ -48,9 +52,7 @@ const Header = () => {
 
           <div>
             <button
-              onClick={() => {
-                setTheme(resolvedTheme === "light" ? "dark" : "light");
-              }}
+              onClick={handleMoodToggle}
               type="button"
               className="rounded-lg p-2 hover:bg-gray-200 dark:hover:bg-gray-700"
               aria-label={

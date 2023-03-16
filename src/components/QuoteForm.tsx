@@ -1,5 +1,6 @@
 import useQuotes from "@/stores/useQuotes";
 import Input from "@/components/core/Inputs/Input";
+import Button from "@/components/core/Button";
 
 const QuoteForm = () => {
   const addQuote = useQuotes((state) => state.addQuote);
@@ -41,9 +42,7 @@ const QuoteForm = () => {
           required
         />
 
-        <button className="button w-auto" type="submit">
-          Submit
-        </button>
+        <Button type="submit">Submit</Button>
       </form>
     </div>
   );

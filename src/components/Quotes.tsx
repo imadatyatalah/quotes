@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 
 import Quote from "@/components/Quote";
+import Button from "@/components/core/Button";
 import useQuotes from "@/stores/useQuotes";
 
 import type { TQuote } from "@/types/quote";
@@ -22,13 +23,17 @@ const Quotes = () => {
   return (
     <div>
       {quotesState.length !== 0 ? (
-        <button
-          className="mb-2 rounded-lg bg-red-500 py-1 px-4 font-medium text-white"
-          onClick={removeAllQuotes}
-          type="button"
-        >
-          Delete all quotes
-        </button>
+        <div className="flex justify-center">
+          <Button
+            className="mb-2"
+            variant="danger"
+            size="sm"
+            onClick={removeAllQuotes}
+            type="button"
+          >
+            Delete all quotes
+          </Button>
+        </div>
       ) : null}
 
       <div className="space-y-2">

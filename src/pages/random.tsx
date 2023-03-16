@@ -5,6 +5,7 @@ import { fetcher } from "@/lib/fetcher";
 import useQuotes from "@/stores/useQuotes";
 import DiceIcon from "@/icons/DiceIcon";
 import SaveIcon from "@/icons/SaveIcon";
+import Button from "@/components/core/Button";
 
 import type { RandomQuote } from "@/types/quote";
 
@@ -35,25 +36,23 @@ const Random = () => {
           </div>
 
           <div className="flex justify-center space-x-2">
-            <button
-              className="button flex items-center rounded-lg font-medium text-white"
+            <Button
+              className="flex items-center"
               type="button"
               onClick={() => mutate()}
+              leftIcon={<DiceIcon />}
             >
-              <DiceIcon />
+              New random quote
+            </Button>
 
-              <span className="ml-2">New random quote</span>
-            </button>
-
-            <button
-              className="button flex items-center rounded-lg font-medium text-white"
+            <Button
+              className="flex items-center"
               type="button"
               onClick={() => addQuote(data.content, data.author)}
+              leftIcon={<SaveIcon />}
             >
-              <SaveIcon />
-
-              <span className="ml-2">Save quote</span>
-            </button>
+              Save quote
+            </Button>
           </div>
         </div>
       </section>
