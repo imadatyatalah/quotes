@@ -36,11 +36,11 @@ const Quotes = () => {
         {quotesState.length !== 0 ? (
           quotesState.map((quote, index) => <Quote {...quote} key={index} />)
         ) : (
-          <Callout emoji="💡">
-            <p className="text-[#333333] dark:text-[#eaeaea]">
+          <div className="flex rounded-lg bg-gray-200 p-4 dark:bg-gray-700">
+            <p className="w-full text-[#333333] dark:text-[#eaeaea]">
               You do not have any quotes yet!
             </p>
-          </Callout>
+          </div>
         )}
       </div>
     </div>
