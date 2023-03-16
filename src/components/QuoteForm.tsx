@@ -1,4 +1,5 @@
 import useQuotes from "@/stores/useQuotes";
+import Input from "@/components/core/Inputs/Input";
 
 const QuoteForm = () => {
   const addQuote = useQuotes((state) => state.addQuote);
@@ -13,8 +14,10 @@ const QuoteForm = () => {
       quote_author: HTMLInputElement;
     };
 
+    // Add quote to the store
     addQuote(formElements.quote_content.value, formElements.quote_author.value);
 
+    // Reset
     formElements.quote_content.value = "";
     formElements.quote_author.value = "";
   };
@@ -22,27 +25,21 @@ const QuoteForm = () => {
   return (
     <div className="w-full">
       <form className="flex flex-col space-y-2" onSubmit={handleSubmit}>
-        <fieldset>
-          <input
-            type="text"
-            name="quote_content"
-            id="quote_content"
-            placeholder={`“Love, love again.”`}
-            className="input"
-            required
-          />
-        </fieldset>
+        <Input
+          type="text"
+          name="quote_content"
+          id="quote_content"
+          placeholder={`“Love, love again.”`}
+          required
+        />
 
-        <fieldset>
-          <input
-            type="text"
-            name="quote_author"
-            id="quote_author"
-            placeholder="John Doe"
-            className="input"
-            required
-          />
-        </fieldset>
+        <Input
+          type="text"
+          name="quote_author"
+          id="quote_author"
+          placeholder="John Doe"
+          required
+        />
 
         <button className="button w-auto" type="submit">
           Submit

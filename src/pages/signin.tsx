@@ -1,3 +1,4 @@
+import Input from "@/components/core/Inputs/Input";
 import { NextSeo } from "next-seo";
 
 const SignIn = () => {
@@ -14,31 +15,14 @@ const SignIn = () => {
 
         <form className="flex flex-col">
           <div className="mb-4 space-y-2">
-            <fieldset>
-              <label htmlFor="email" className="font-medium">
-                Email
-              </label>
+            <Input label="Email" type="email" name="email" id="email" />
 
-              <input
-                type="email"
-                name="email"
-                id="email"
-                className="input mt-1"
-              />
-            </fieldset>
-
-            <fieldset>
-              <label htmlFor="password" className="font-medium">
-                Password
-              </label>
-
-              <input
-                type="password"
-                name="password"
-                id="password"
-                className="input mt-1"
-              />
-            </fieldset>
+            <Input
+              label="Password"
+              type="password"
+              name="password"
+              id="password"
+            />
           </div>
 
           <button
