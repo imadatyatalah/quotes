@@ -23,15 +23,13 @@ const Header = () => {
       <div className="flex items-center justify-between">
         <div>
           <Link href="/">
-            <a>
-              <Image
-                src={Logo}
-                width="45"
-                height="45"
-                priority
-                alt="Quotes logo"
-              />
-            </a>
+            <Image
+              src={Logo}
+              width="45"
+              height="45"
+              priority
+              alt="Quotes logo"
+            />
           </Link>
         </div>
 
@@ -39,15 +37,11 @@ const Header = () => {
           <nav>
             <ul className="flex space-x-4 font-medium text-primary-300 dark:text-primary-500 sm:text-lg">
               <li>
-                <Link href="/random">
-                  <a>Random</a>
-                </Link>
+                <Link href="/random">Random</Link>
               </li>
 
               <li>
-                <Link href="/signin">
-                  <a>Sign in</a>
-                </Link>
+                <Link href="/signin">Sign in</Link>
               </li>
             </ul>
           </nav>
