@@ -6,11 +6,12 @@ import useQuotes from "@/stores/useQuotes";
 import DiceIcon from "@/icons/DiceIcon";
 import SaveIcon from "@/icons/SaveIcon";
 import Button from "@/components/core/Button";
+import ShareQuoteModal from "@/modules/random/ShareQuoteModal";
 
 import type { RandomQuote } from "@/types/quote";
 
 const Random = () => {
-  const { data, error, mutate } = useSWR<RandomQuote>(
+  const { data, error, mutate, isLoading } = useSWR<RandomQuote>(
     "https://api.quotable.io/random",
     fetcher,
     { revalidateOnFocus: false }
@@ -18,8 +19,39 @@ const Random = () => {
 
   const addQuote = useQuotes((state) => state.addQuote);
 
-  if (error) return <div className="text-center">Failed to load</div>;
-  if (!data) return <div className="text-center">Loading...</div>;
+  if (isLoading)
+    return (
+      <div className="py-10">
+        <div>
+          <h2 className="text-center text-4xl font-bold text-primary-400">
+            Loading...
+          </h2>
+        </div>
+      </div>
+    );
+
+  if (error)
+    return (
+      <div className="py-10">
+        <div className="space-y-6">
+          <div>
+            <h2 className="text-center text-4xl font-bold text-primary-400">
+              Ooops, Something went wrong
+            </h2>
+          </div>
+
+          <div className="flex justify-center space-x-2">
+            <Button
+              type="button"
+              onClick={() => mutate()}
+              leftIcon={<DiceIcon />}
+            >
+              Try again
+            </Button>
+          </div>
+        </div>
+      </div>
+    );
 
   return (
     <>
@@ -37,7 +69,6 @@ const Random = () => {
 
           <div className="flex justify-center space-x-2">
             <Button
-              className="flex items-center"
               type="button"
               onClick={() => mutate()}
               leftIcon={<DiceIcon />}
@@ -46,13 +77,14 @@ const Random = () => {
             </Button>
 
             <Button
-              className="flex items-center"
               type="button"
               onClick={() => addQuote(data.content, data.author)}
               leftIcon={<SaveIcon />}
             >
               Save quote
             </Button>
+
+            <ShareQuoteModal quote={data.content} author={data.author} />
           </div>
         </div>
       </section>
