@@ -67,7 +67,7 @@ const Random = () => {
             <p className="font-medium">{data.author}</p>
           </div>
 
-          <div className="flex justify-center space-x-2">
+          <div className="flex flex-col justify-center gap-y-3 sm:flex-row sm:gap-y-0 sm:gap-x-3">
             <Button
               type="button"
               onClick={() => mutate()}
