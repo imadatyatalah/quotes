@@ -1,14 +1,8 @@
-import TrashIcon from "@/icons/TrashIcon";
-import useQuotes from "@/stores/useQuotes";
-import Button from "@/components/core/Button";
+import QuoteCard from "./QuoteCard";
 
 import type { TQuote } from "@/types/quote";
 
 const Quote = ({ quote_content, quote_author, date }: TQuote) => {
-  const removeQuoteByDate = useQuotes((state) => state.removeQuoteByDate);
-
-  const handleRemoveQuote = () => removeQuoteByDate(date);
-
   return (
     <div className="flex w-full justify-between rounded-lg border-2 border-gray-200 p-2 text-left dark:border-gray-700">
       <div className="space-y-1">
@@ -20,14 +14,7 @@ const Quote = ({ quote_content, quote_author, date }: TQuote) => {
       </div>
 
       <div>
-        <Button
-          className="p-1"
-          variant="danger"
-          onClick={handleRemoveQuote}
-          type="button"
-        >
-          <TrashIcon />
-        </Button>
+        <QuoteCard date={date} />
       </div>
     </div>
   );

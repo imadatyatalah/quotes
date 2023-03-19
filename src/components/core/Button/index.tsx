@@ -43,7 +43,7 @@ const Button = ({
   return (
     <button
       className={twMerge(
-        "flex items-center justify-center rounded-lg",
+        "flex items-center justify-center rounded-lg transition duration-200 active:scale-95",
         VARIANTS[variant],
         SIZES[size],
         className

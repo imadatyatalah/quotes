@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-import Quote from "@/components/Quote";
+import QuoteCard from "@/components/QuoteCard";
 import Button from "@/components/core/Button";
 import useQuotes from "@/stores/useQuotes";
 
@@ -38,7 +38,9 @@ const Quotes = () => {
 
       <div className="space-y-2">
         {quotesState.length !== 0 ? (
-          quotesState.map((quote, index) => <Quote {...quote} key={index} />)
+          quotesState.map((quote, index) => (
+            <QuoteCard {...quote} key={index} />
+          ))
         ) : (
           <div className="flex rounded-lg bg-gray-200 p-4 dark:bg-gray-700">
             <p className="w-full text-[#333333] dark:text-[#eaeaea]">

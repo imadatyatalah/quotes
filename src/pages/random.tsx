@@ -71,7 +71,10 @@ const Random = () => {
             <Button
               type="button"
               onClick={() => mutate()}
-              leftIcon={<DiceIcon />}
+              className="group"
+              leftIcon={
+                <DiceIcon className="transition duration-200 group-hover:rotate-[90deg]" />
+              }
             >
               New random quote
             </Button>
