@@ -4,7 +4,8 @@ import { ThemeProvider } from "next-themes";
 import { Plus_Jakarta_Sans } from "next/font/google";
 import { DefaultSeo } from "next-seo";
 
-import GlobalLayout from "@/layout/Global";
+import Header from "@/layout/Header";
+import Footer from "@/layout/Footer";
 import SEO from "next-seo.config";
 
 import "@/styles/globals.css";
@@ -26,9 +27,11 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
       `}</style>
 
       <ThemeProvider defaultTheme="system" attribute="class">
-        <GlobalLayout>
+        <Header />
+        <main>
           <Component {...pageProps} />
-        </GlobalLayout>
+        </main>
+        <Footer />
       </ThemeProvider>
     </>
   );

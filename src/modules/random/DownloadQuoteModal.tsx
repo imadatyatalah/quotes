@@ -42,12 +42,12 @@ const DownloadQuoteModal = ({
 
       <Dialog.Portal>
         <Dialog.Overlay className="fixed inset-0 bg-blackA9 data-[state=open]:animate-overlayShow" />
-        <Dialog.Content className="fixed top-[50%] left-[50%] max-h-[85vh] w-[90vw] max-w-[500px] translate-x-[-50%] translate-y-[-50%] rounded-[1.25rem] bg-white p-5 shadow-[hsl(206_22%_7%_/_35%)_0px_10px_38px_-10px,_hsl(206_22%_7%_/_20%)_0px_10px_20px_-15px] focus:outline-none data-[state=open]:animate-contentShow">
+        <Dialog.Content className="fixed left-[50%] top-[50%] max-h-[85vh] w-[90vw] max-w-[500px] translate-x-[-50%] translate-y-[-50%] rounded-[1.25rem] bg-white p-5 shadow-[hsl(206_22%_7%_/_35%)_0px_10px_38px_-10px,_hsl(206_22%_7%_/_20%)_0px_10px_20px_-15px] focus:outline-none data-[state=open]:animate-contentShow">
           <Dialog.Title className="m-0 text-[17px] font-medium text-mauve12">
             Download quote
           </Dialog.Title>
 
-          <Dialog.Description className="mt-[0.312rem] mb-5 text-[15px] leading-normal text-mauve11">
+          <Dialog.Description className="mb-5 mt-[0.312rem] text-[15px] leading-normal text-mauve11">
             Choose background image for the quote and create a unique image to
             share or use as a wallpaper.
           </Dialog.Description>
@@ -72,7 +72,7 @@ const DownloadQuoteModal = ({
 
           <Dialog.Close asChild>
             <button
-              className="absolute top-[10px] right-[10px] inline-flex h-[25px] w-[25px] appearance-none items-center justify-center rounded-full text-violet11 hover:bg-violet4 focus:shadow-[0_0_0_2px] focus:shadow-violet7 focus:outline-none"
+              className="absolute right-[10px] top-[10px] inline-flex h-[25px] w-[25px] appearance-none items-center justify-center rounded-full text-violet11 hover:bg-violet4 focus:shadow-[0_0_0_2px] focus:shadow-violet7 focus:outline-none"
               aria-label="Close"
             >
               <Cross2Icon />

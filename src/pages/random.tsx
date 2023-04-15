@@ -12,7 +12,7 @@ import DownloadQuoteModal from "@/modules/random/DownloadQuoteModal";
 import type { RandomQuote } from "@/types/quote";
 
 const Random = () => {
-  const { data, error, mutate, isLoading } = useSWR<RandomQuote>(
+  const { data, error, isLoading, mutate } = useSWR<RandomQuote | any>(
     "https://api.quotable.io/random",
     fetcher,
     { revalidateOnFocus: false }
@@ -68,7 +68,7 @@ const Random = () => {
             <p className="font-medium">{data.author}</p>
           </div>
 
-          <div className="flex flex-col justify-center gap-y-3 md:flex-row md:gap-y-0 md:gap-x-3">
+          <div className="flex flex-col justify-center gap-y-3 md:flex-row md:gap-x-3 md:gap-y-0">
             <Button
               type="button"
               onClick={() => mutate()}

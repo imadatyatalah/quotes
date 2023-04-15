@@ -1,4 +1,4 @@
-import QuoteCard from "./QuoteCard";
+import QuoteCardMenu from "./QuoteCardMenu";
 
 import type { TQuote } from "@/types/quote";
 
@@ -14,7 +14,7 @@ const Quote = ({ quote_content, quote_author, date }: TQuote) => {
       </div>
 
       <div>
-        <QuoteCard date={date} />
+        <QuoteCardMenu date={date} />
       </div>
     </div>
   );
