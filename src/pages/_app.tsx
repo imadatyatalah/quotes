@@ -1,7 +1,7 @@
 import type { AppProps } from "next/app";
 
 import { ThemeProvider } from "next-themes";
-import { Inter } from "next/font/google";
+import { Plus_Jakarta_Sans } from "next/font/google";
 import { DefaultSeo } from "next-seo";
 
 import GlobalLayout from "@/layout/Global";
@@ -9,7 +9,10 @@ import SEO from "next-seo.config";
 
 import "@/styles/globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
+const plus_jakarta_sans = Plus_Jakarta_Sans({
+  subsets: ["latin"],
+  variable: "--font-plus_jakarta_sans",
+});
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
   return (
@@ -18,7 +21,7 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
 
       <style jsx global>{`
         html {
-          font-family: ${inter.style.fontFamily};
+          font-family: ${plus_jakarta_sans.style.fontFamily};
         }
       `}</style>
 

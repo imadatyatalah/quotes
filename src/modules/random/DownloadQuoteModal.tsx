@@ -1,6 +1,5 @@
 import Button from "@/components/core/Button";
 import FolderArrowDown from "@/icons/FolderArrowDown";
-import { createQuoteImage } from "@/lib/createQuoteImage";
 import * as Dialog from "@radix-ui/react-dialog";
 import { Cross2Icon } from "@radix-ui/react-icons";
 import Image from "next/image";
@@ -19,26 +18,16 @@ const DownloadQuoteModal = ({
   quote: string;
   author: string;
 }) => {
-  const [isImageLoading, setIsImageLoading] = useState(true);
-  const [backgroundImage, setBackgroundImage] = useState(
-    "v1679249576/winter-gradient_p9g3vw.png"
-  );
   const [imageSize, setImageSize] = useState<ImageSizes>({
     height: 1080,
     width: 1920,
   });
 
-  const imageWithQuoteURL = createQuoteImage({
-    author: author,
-    quote: quote,
-    backgroundImage: backgroundImage,
-    height: imageSize.height,
-    width: imageSize.width,
-  });
+  const image = `http://localhost:3000/api/og?quote=${quote}&author=${author}&width=${imageSize.width}&height=${imageSize.height}`;
 
   const handleDownloadImage = () => {
-    if (imageWithQuoteURL) {
-      saveAs(imageWithQuoteURL);
+    if (image) {
+      saveAs(image);
     }
   };
 
@@ -63,23 +52,18 @@ const DownloadQuoteModal = ({
           </Dialog.Description>
 
           <div className="space-y-4">
-            <div className="">
+            <div>
               <Image
-                src={imageWithQuoteURL}
+                src={image}
                 width={imageSize.width}
                 height={imageSize.height}
                 alt=""
-                onLoadingComplete={() => setIsImageLoading(false)}
                 className="rounded-lg"
               />
             </div>
 
             <div className="flex justify-end">
-              <Button
-                isLoading={isImageLoading}
-                onClick={handleDownloadImage}
-                type="button"
-              >
+              <Button onClick={handleDownloadImage} type="button">
                 Download image
               </Button>
             </div>
