@@ -7,6 +7,7 @@ import DiceIcon from "@/icons/DiceIcon";
 import SaveIcon from "@/icons/SaveIcon";
 import Button from "@/components/core/Button";
 import ShareQuoteModal from "@/modules/random/ShareQuoteModal";
+import DownloadQuoteModal from "@/modules/random/DownloadQuoteModal";
 
 import type { RandomQuote } from "@/types/quote";
 
@@ -67,7 +68,7 @@ const Random = () => {
             <p className="font-medium">{data.author}</p>
           </div>
 
-          <div className="flex flex-col justify-center gap-y-3 sm:flex-row sm:gap-y-0 sm:gap-x-3">
+          <div className="flex flex-col justify-center gap-y-3 md:flex-row md:gap-y-0 md:gap-x-3">
             <Button
               type="button"
               onClick={() => mutate()}
@@ -86,6 +87,8 @@ const Random = () => {
             >
               Save quote
             </Button>
+
+            <DownloadQuoteModal quote={data.content} author={data.author} />
 
             <ShareQuoteModal quote={data.content} author={data.author} />
           </div>

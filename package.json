@@ -17,6 +17,7 @@
     "@radix-ui/react-dialog": "^1.0.3",
     "@radix-ui/react-dropdown-menu": "^2.0.4",
     "@radix-ui/react-icons": "^1.2.0",
+    "file-saver": "^2.0.5",
     "next": "^13.2.4",
     "next-seo": "^5.15.0",
     "next-themes": "^0.2.1",
@@ -27,6 +28,7 @@
     "zustand": "^4.3.6"
   },
   "devDependencies": {
+    "@types/file-saver": "^2.0.5",
     "@types/node": "^18.15.3",
     "@types/react": "^18.0.28",
     "autoprefixer": "^10.4.14",
