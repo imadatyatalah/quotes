@@ -9,18 +9,22 @@ import SunIcon from "@/icons/SunIcon";
 
 import Logo from "public/logo.png";
 
-const Header = () => {
+const ThemeToggle = ({ theme }: { theme?: string }) => {
   const [mounted, setMounted] = useState(false);
 
-  const { resolvedTheme, theme, setTheme } = useTheme();
-
   useEffect(() => setMounted(true), []);
+
+  if (!mounted) return <div className="h-5 w-5"></div>;
+
+  return <>{theme === "light" ? <MoonIcon /> : <SunIcon />}</>;
+};
+
+const Header = () => {
+  const { theme, resolvedTheme, setTheme } = useTheme();
 
   const handleMoodToggle = () => {
     setTheme(resolvedTheme === "light" ? "dark" : "light");
   };
-
-  if (!mounted) return null;
 
   return (
     <header className="py-2">
@@ -59,7 +63,7 @@ const Header = () => {
                 resolvedTheme === "light" ? "Dark Mode" : "Light Mode"
               }
             >
-              {theme === "light" ? <MoonIcon /> : <SunIcon />}
+              <ThemeToggle theme={theme} />
             </button>
           </div>
         </div>
