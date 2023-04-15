@@ -5,6 +5,7 @@ import { Cross2Icon } from "@radix-ui/react-icons";
 import Image from "next/image";
 import { useState } from "react";
 import { saveAs } from "file-saver";
+import { baseUrl } from "@/lib/constants";
 
 type ImageSizes = {
   height: number;
@@ -23,7 +24,7 @@ const DownloadQuoteModal = ({
     width: 1920,
   });
 
-  const image = `http://localhost:3000/api/og?quote=${quote}&author=${author}&width=${imageSize.width}&height=${imageSize.height}`;
+  const image = `${baseUrl}/api/og?quote=${quote}&author=${author}&width=${imageSize.width}&height=${imageSize.height}`;
 
   const handleDownloadImage = () => {
     if (image) {
