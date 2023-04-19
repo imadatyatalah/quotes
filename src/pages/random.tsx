@@ -5,7 +5,7 @@ import { fetcher } from "@/lib/fetcher";
 import useQuotes from "@/stores/useQuotes";
 import DiceIcon from "@/icons/DiceIcon";
 import SaveIcon from "@/icons/SaveIcon";
-import Button from "@/components/core/Button";
+import { Button } from "@/ui/button";
 import ShareQuoteModal from "@/modules/random/ShareQuoteModal";
 import DownloadQuoteModal from "@/modules/random/DownloadQuoteModal";
 
@@ -42,11 +42,7 @@ const Random = () => {
           </div>
 
           <div className="flex justify-center space-x-2">
-            <Button
-              type="button"
-              onClick={() => mutate()}
-              leftIcon={<DiceIcon />}
-            >
+            <Button type="button" variant="primary" onClick={() => mutate()}>
               Try again
             </Button>
           </div>
@@ -70,22 +66,21 @@ const Random = () => {
 
           <div className="flex flex-col justify-center gap-y-3 md:flex-row md:gap-x-3 md:gap-y-0">
             <Button
+              variant="primary"
               type="button"
               onClick={() => mutate()}
               className="group"
-              leftIcon={
-                <DiceIcon className="transition duration-200 group-hover:rotate-[90deg]" />
-              }
             >
+              <DiceIcon className="mr-2 transition duration-200 group-hover:rotate-[90deg]" />{" "}
               New random quote
             </Button>
 
             <Button
+              variant="primary"
               type="button"
               onClick={() => addQuote(data.content, data.author)}
-              leftIcon={<SaveIcon />}
             >
-              Save quote
+              <SaveIcon className="mr-2" /> Save quote
             </Button>
 
             <DownloadQuoteModal quote={data.content} author={data.author} />

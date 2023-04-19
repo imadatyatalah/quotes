@@ -1,6 +1,7 @@
 import useQuotes from "@/stores/useQuotes";
-import Input from "@/components/core/Inputs";
-import Button from "@/components/core/Button";
+import { Input } from "@/ui/input";
+import { Button } from "@/ui/button";
+import { Label } from "@/ui/label";
 
 const QuoteForm = () => {
   const addQuote = useQuotes((state) => state.addQuote);
@@ -25,24 +26,39 @@ const QuoteForm = () => {
 
   return (
     <div className="w-full">
-      <form className="flex flex-col space-y-2" onSubmit={handleSubmit}>
-        <Input
-          type="text"
-          name="quote_content"
-          id="quote_content"
-          placeholder={`“Love, love again.”`}
-          required
-        />
+      <form
+        className="flex flex-col space-y-6 text-left"
+        onSubmit={handleSubmit}
+      >
+        <div className="space-y-2">
+          <fieldset className="space-y-1">
+            <Label htmlFor="quote_content">Quote</Label>
 
-        <Input
-          type="text"
-          name="quote_author"
-          id="quote_author"
-          placeholder="John Doe"
-          required
-        />
+            <Input
+              type="text"
+              name="quote_content"
+              id="quote_content"
+              placeholder={`“Love, love again.”`}
+              required
+            />
+          </fieldset>
 
-        <Button type="submit">Submit</Button>
+          <fieldset className="space-y-1">
+            <Label htmlFor="quote_author">Author</Label>
+
+            <Input
+              type="text"
+              name="quote_author"
+              id="quote_author"
+              placeholder="John Doe"
+              required
+            />
+          </fieldset>
+        </div>
+
+        <Button variant="primary" type="submit">
+          Submit
+        </Button>
       </form>
     </div>
   );

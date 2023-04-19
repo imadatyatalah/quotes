@@ -1,7 +1,9 @@
 import { useEffect, useState } from "react";
+import { Lightbulb } from "lucide-react";
 
+import { Alert, AlertTitle } from "@/ui/alert";
 import QuoteCard from "@/components/QuoteCard";
-import Button from "@/components/core/Button";
+import { Button } from "@/ui/button";
 import useQuotes from "@/stores/useQuotes";
 
 import type { TQuote } from "@/types/quote";
@@ -21,16 +23,10 @@ const Quotes = () => {
   }, [quotes]);
 
   return (
-    <div>
+    <div className="space-y-2">
       {quotesState.length !== 0 ? (
         <div className="flex justify-center">
-          <Button
-            className="mb-2"
-            variant="danger"
-            size="sm"
-            onClick={removeAllQuotes}
-            type="button"
-          >
+          <Button variant="destructive" onClick={removeAllQuotes} type="button">
             Delete all quotes
           </Button>
         </div>
@@ -42,11 +38,10 @@ const Quotes = () => {
             <QuoteCard {...quote} key={index} />
           ))
         ) : (
-          <div className="flex rounded-lg bg-gray-200 p-4 dark:bg-gray-700">
-            <p className="w-full text-[#333333] dark:text-[#eaeaea]">
-              You do not have any quotes yet!
-            </p>
-          </div>
+          <Alert className="text-left">
+            <Lightbulb className="h-4 w-4" />
+            <AlertTitle>You do not have any quotes yet!</AlertTitle>
+          </Alert>
         )}
       </div>
     </div>
