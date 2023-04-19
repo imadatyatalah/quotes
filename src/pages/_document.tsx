@@ -23,7 +23,7 @@ const Document = () => {
         />
         <link rel="manifest" href="/favicon/site.webmanifest" />
       </Head>
-      <body className="bg-gray-50 text-black dark:bg-gray-900 dark:text-white">
+      <body>
         <Main />
         <NextScript />
       </body>

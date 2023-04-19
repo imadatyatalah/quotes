@@ -58,10 +58,6 @@ const Header = () => {
               <li>
                 <Link href="/random">Random</Link>
               </li>
-
-              <li>
-                <Link href="/signin">Sign in</Link>
-              </li>
             </ul>
           </nav>
 
