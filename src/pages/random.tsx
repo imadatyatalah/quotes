@@ -2,6 +2,7 @@ import { NextSeo } from "next-seo";
 import useSWR from "swr";
 
 import { fetcher } from "@/lib/fetcher";
+import { useToast } from "@/ui/use-toast";
 import useQuotes from "@/stores/useQuotes";
 import DiceIcon from "@/icons/DiceIcon";
 import SaveIcon from "@/icons/SaveIcon";
@@ -12,6 +13,8 @@ import DownloadQuoteModal from "@/modules/random/DownloadQuoteModal";
 import type { RandomQuote } from "@/types/quote";
 
 const Random = () => {
+  const { toast } = useToast();
+
   const { data, error, isLoading, mutate } = useSWR<RandomQuote | any>(
     "https://api.quotable.io/random",
     fetcher,
@@ -78,7 +81,15 @@ const Random = () => {
             <Button
               variant="primary"
               type="button"
-              onClick={() => addQuote(data.content, data.author)}
+              onClick={() => {
+                addQuote(data.content, data.author);
+
+                toast({
+                  title: "Your quote has been saved successfully",
+                });
+
+                mutate();
+              }}
             >
               <SaveIcon className="mr-2" /> Save quote
             </Button>

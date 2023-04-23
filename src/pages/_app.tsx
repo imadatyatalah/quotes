@@ -4,6 +4,7 @@ import { ThemeProvider } from "next-themes";
 import { Plus_Jakarta_Sans } from "next/font/google";
 import { DefaultSeo } from "next-seo";
 
+import { Toaster } from "@/ui/toaster";
 import Header from "@/layout/Header";
 import Footer from "@/layout/Footer";
 import SEO from "next-seo.config";
@@ -32,6 +33,8 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
           <Component {...pageProps} />
         </main>
         <Footer />
+
+        <Toaster />
       </ThemeProvider>
     </>
   );
