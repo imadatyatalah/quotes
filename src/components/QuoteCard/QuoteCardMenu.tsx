@@ -20,7 +20,7 @@ const QuoteCard = ({ date }: Props) => {
 
   return (
     <DropdownMenu>
-      <DropdownMenuTrigger>
+      <DropdownMenuTrigger className="p-1">
         <DotsVerticalIcon />
       </DropdownMenuTrigger>
 
