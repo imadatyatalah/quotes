@@ -1,5 +1,5 @@
 import { Button } from "@/ui/button";
-import FolderArrowDown from "@/icons/FolderArrowDown";
+import { FolderDown } from "lucide-react";
 import {
   Dialog,
   DialogContent,
@@ -43,7 +43,7 @@ const DownloadQuoteModal = ({
     <Dialog>
       <DialogTrigger asChild>
         <Button variant="primary" type="button">
-          <FolderArrowDown className="mr-2" /> Download
+          <FolderDown className="mr-2 w-5 h-5" /> Download
         </Button>
       </DialogTrigger>
 

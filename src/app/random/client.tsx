@@ -1,15 +1,14 @@
 "use client";
 
 import useSWR from "swr";
-
 import { fetcher } from "@/lib/fetcher";
 import { useToast } from "@/ui/use-toast";
 import useQuotes from "@/stores/useQuotes";
 import DiceIcon from "@/icons/DiceIcon";
-import SaveIcon from "@/icons/SaveIcon";
 import { Button } from "@/ui/button";
-import ShareQuoteModal from "@/modules/random/ShareQuoteModal";
-import DownloadQuoteModal from "@/modules/random/DownloadQuoteModal";
+import DownloadQuoteModal from "./_components/DownloadQuoteModal";
+import ShareQuoteModal from "./_components/ShareQuoteModal";
+import { Bookmark } from "lucide-react";
 
 import type { RandomQuote } from "@/types/quote";
 
@@ -89,7 +88,8 @@ const RandomPageClient = () => {
               mutate();
             }}
           >
-            <SaveIcon className="mr-2" /> Save quote
+            <Bookmark className="mr-2 w-5 h-5" />
+            Save quote
           </Button>
 
           <DownloadQuoteModal quote={data.content} author={data.author} />

@@ -1,5 +1,5 @@
 import { Button } from "@/ui/button";
-import ShareIcon from "@/icons/ShareIcon";
+import { Share2 } from "lucide-react";
 import { twitterShareQuoteURL } from "@/lib/SocialMediaShareURLs";
 import {
   Dialog,
@@ -10,7 +10,7 @@ import {
   DialogTrigger,
 } from "@/ui/dialog";
 
-import { TwitterLogoIcon } from "@radix-ui/react-icons";
+import XIcon from "@/icons/X";
 
 type Props = {
   quote: string;
@@ -24,7 +24,7 @@ const ShareQuoteModal = ({ quote, author }: Props) => {
     <Dialog>
       <DialogTrigger asChild>
         <Button variant="primary" type="button">
-          <ShareIcon className="mr-2" /> Share
+          <Share2 className="mr-2 w-5 h-5" /> Share
         </Button>
       </DialogTrigger>
 
@@ -37,14 +37,14 @@ const ShareQuoteModal = ({ quote, author }: Props) => {
         </DialogHeader>
 
         <div className="flex items-center space-x-2">
-          {/* Twitter */}
+          {/* X */}
           <a
             href={twitterShareURL}
             target="_blank"
             rel="noopener noreferrer"
-            className="rounded-full bg-[#1DA1F2] p-5"
+            className="rounded-full bg-[#1DA1F2] p-3"
           >
-            <TwitterLogoIcon className="h-6 w-6 text-white" />
+            <XIcon className="h-5 w-5 text-white" />
           </a>
         </div>
       </DialogContent>
