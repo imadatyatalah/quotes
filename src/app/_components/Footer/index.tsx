@@ -1,7 +1,7 @@
 const Footer = () => {
   return (
-    <footer className="pb-10 text-center font-semibold">
-      Made with ❤️ by{" "}
+    <footer className="flex items-center justify-center h-16 text-center font-semibold">
+      Made with ❤️ by&nbsp;
       <a
         className="text-primary-300 underline dark:text-primary-500"
         href="https://www.imadatyat.me"
@@ -9,8 +9,8 @@ const Footer = () => {
         rel="noopener noreferrer"
       >
         Imad Atyat-Allah
-      </a>{" "}
-      in 🇲🇦
+      </a>
+      &nbsp; in 🇲🇦
     </footer>
   );
 };
