@@ -24,28 +24,25 @@ Quotes is a simple web application that allows you to store your quotes and shar
 
 The idea came up after I started writing a quote that I found on the internet in my to-do list app 😆 and I thought why not create a quotes app, Similar to a to-do list app but it's made for quotes instead of tasks.
 
-### Built With
+## Tech Stack
 
-- [TypeScript](https://www.typescriptlang.org/)
-- [Next.js](https://nextjs.org/)
-- [TailwindCSS](https://tailwindcss.com/)
-- [Next Themes](https://github.com/pacocoursey/next-themes)
-- [Next SEO](https://github.com/garmeeh/next-seo)
-
-### Features
-
-- [x] Create quotes with it's author.
-- [x] Delete one quote.
-- [x] Delete all quotes.
-- [ ] Edit quotes.
-- [ ] Search quotes.
-- [ ] Sort quotes.
-- [ ] Paginate quotes.
-- [ ] Share quotes.
-
-### Screenshot
+- [Next.js](https://nextjs.org/) – framework
+- [TypeScript](https://www.typescriptlang.org/) – language
+- [Tailwind CSS](https://tailwindcss.com/) – CSS
+- [Next Themes](https://github.com/pacocoursey/next-themes) – dark mode
+- [shadcn/ui](https://ui.shadcn.com/) – UI library
+- [Vercel](https://vercel.com/) – deployments
 
 ## Getting Started
+
+```
+git clone https://github.com/imadatyatalah/quotes.git
+cd quotes
+pnpm i
+pnpm dev
+```
+
+Create a `.env.local` file similar to `.env.example`.
 
 ## License
 
