@@ -1,9 +1,18 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  reactStrictMode: true,
-  swcMinify: true,
   images: {
-    domains: ["localhost", "quotes.imadatyat.me"],
+    remotePatterns: [
+      {
+        protocol: "http",
+        hostname: "localhost",
+        pathname: "**",
+      },
+      {
+        protocol: "https",
+        hostname: "quotes.imadatyat.me",
+        pathname: "**",
+      },
+    ],
   },
 };
 

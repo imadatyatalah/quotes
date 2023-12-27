@@ -1,52 +1,14 @@
-import { useEffect, useState } from "react";
-import { Lightbulb, Loader2 } from "lucide-react";
+"use client";
 
-import { Alert, AlertTitle, AlertDescription } from "@/ui/alert";
+import { useEffect, useState } from "react";
+
 import { Button } from "@/ui/button";
 import QuoteCard from "@/components/QuoteCard";
 import useQuotes from "@/stores/useQuotes";
+import SurpriseMeButton from "./SurpriseMeButton";
 
 import type { TQuote } from "@/types/quote";
-
-const SurpriseMeButton = () => {
-  const [isSurpriseMeLoading, setIsSurpriseMeLoading] = useState(false);
-
-  const addQuote = useQuotes((state) => state.addQuote);
-
-  const handleSurpriseMeButton = async () => {
-    setIsSurpriseMeLoading(true);
-
-    try {
-      const res = await fetch("https://api.quotable.io/random");
-      const data = await res.json();
-
-      addQuote(data?.content, data?.author);
-    } catch (error) {
-      console.log(error);
-    }
-
-    setIsSurpriseMeLoading(false);
-  };
-
-  return (
-    <Button
-      disabled={isSurpriseMeLoading}
-      onClick={handleSurpriseMeButton}
-      size="sm"
-      variant="outline"
-      type="button"
-    >
-      {isSurpriseMeLoading ? (
-        <>
-          <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-          Loading
-        </>
-      ) : (
-        "Surprise me"
-      )}
-    </Button>
-  );
-};
+import NoQuotesFound from "./NoQuotesFound";
 
 const Quotes = () => {
   const [quotesState, setQuotesState] = useState<TQuote[]>([]);
@@ -87,14 +49,7 @@ const Quotes = () => {
             <QuoteCard {...quote} key={index} />
           ))
         ) : (
-          <Alert className="text-left">
-            <Lightbulb className="h-4 w-4" />
-            <AlertTitle>You do not have any quotes yet!</AlertTitle>
-
-            <AlertDescription className="mt-3">
-              <SurpriseMeButton />
-            </AlertDescription>
-          </Alert>
+          <NoQuotesFound />
         )}
       </div>
     </div>

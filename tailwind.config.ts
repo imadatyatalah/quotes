@@ -1,10 +1,14 @@
-const { fontFamily } = require("tailwindcss/defaultTheme");
+import type { Config } from "tailwindcss";
 
-/** @type {import('tailwindcss').Config} */
-module.exports = {
+const config = {
   content: ["./src/**/*.{js,ts,jsx,tsx}"],
-  darkMode: "class",
+  darkMode: ["class"],
+  prefix: "",
   theme: {
+    fontFamily: {
+      plus_jakarta_sans: ["var(--font-plus_jakarta_sans)"],
+    },
+
     container: {
       center: true,
       padding: "2rem",
@@ -66,19 +70,19 @@ module.exports = {
       },
 
       borderRadius: {
-        lg: `var(--radius)`,
-        md: `calc(var(--radius) - 2px)`,
+        lg: "var(--radius)",
+        md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
       },
 
       keyframes: {
         "accordion-down": {
-          from: { height: 0 },
+          from: { height: "0" },
           to: { height: "var(--radix-accordion-content-height)" },
         },
         "accordion-up": {
           from: { height: "var(--radix-accordion-content-height)" },
-          to: { height: 0 },
+          to: { height: "0" },
         },
       },
 
@@ -88,5 +92,8 @@ module.exports = {
       },
     },
   },
+
   plugins: [require("tailwindcss-animate")],
-};
+} satisfies Config;
+
+export default config;

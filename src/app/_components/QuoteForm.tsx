@@ -1,3 +1,5 @@
+"use client";
+
 import useQuotes from "@/stores/useQuotes";
 import { Input } from "@/ui/input";
 import { Button } from "@/ui/button";
@@ -57,7 +59,7 @@ const QuoteForm = () => {
         </div>
 
         <Button variant="primary" type="submit">
-          Submit
+          Save Quote
         </Button>
       </form>
     </div>

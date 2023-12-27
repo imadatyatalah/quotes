@@ -31,7 +31,7 @@ const DownloadQuoteModal = ({
     width: 1920,
   });
 
-  const image = `${baseUrl}/api/og?quote=${quote}&author=${author}&width=${imageSize.width}&height=${imageSize.height}`;
+  const image = `${baseUrl}/og?quote=${quote}&author=${author}&width=${imageSize.width}&height=${imageSize.height}`;
 
   const handleDownloadImage = () => {
     if (image) {
