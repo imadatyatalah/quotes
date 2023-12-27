@@ -1,6 +1,5 @@
 "use client";
 
-import { Toaster } from "@/ui/toaster";
 import { ThemeProvider } from "next-themes";
 
 type Props = {
@@ -16,8 +15,6 @@ const Providers = ({ children }: Props) => {
       disableTransitionOnChange
     >
       {children}
-
-      <Toaster />
     </ThemeProvider>
   );
 };

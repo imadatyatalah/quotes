@@ -1,3 +1,4 @@
+import { Toaster } from "@/ui/sonner";
 import { Plus_Jakarta_Sans } from "next/font/google";
 import Providers from "./providers";
 import type { Metadata } from "next";
@@ -60,6 +61,8 @@ const RootLayout = ({ children }: Props) => {
           <main>{children}</main>
 
           <Footer />
+
+          <Toaster />
         </Providers>
       </body>
     </html>

@@ -2,7 +2,7 @@
 
 import useSWR from "swr";
 import { fetcher } from "@/lib/fetcher";
-import { useToast } from "@/ui/use-toast";
+import { toast } from "sonner";
 import useQuotes from "@/stores/useQuotes";
 import DiceIcon from "@/icons/DiceIcon";
 import { Button } from "@/ui/button";
@@ -13,8 +13,6 @@ import { Bookmark } from "lucide-react";
 import type { RandomQuote } from "@/types/quote";
 
 const RandomPageClient = () => {
-  const { toast } = useToast();
-
   const { data, error, isLoading, mutate } = useSWR<RandomQuote | any>(
     "https://api.quotable.io/random",
     fetcher,
@@ -81,9 +79,7 @@ const RandomPageClient = () => {
             onClick={() => {
               addQuote(data.content, data.author);
 
-              toast({
-                title: "Your quote has been saved successfully",
-              });
+              toast("Your quote has been saved successfully");
 
               mutate();
             }}
