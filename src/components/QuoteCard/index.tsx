@@ -2,7 +2,7 @@ import QuoteCardMenu from "./QuoteCardMenu";
 
 import type { TQuote } from "@/types/quote";
 
-const Quote = ({ quote_content, quote_author, date }: TQuote) => {
+const QuoteCard = ({ quote_content, quote_author, date }: TQuote) => {
   return (
     <div className="flex w-full justify-between rounded-lg border border-input p-2 text-left dark:border-gray-700">
       <div className="space-y-1">
@@ -14,10 +14,14 @@ const Quote = ({ quote_content, quote_author, date }: TQuote) => {
       </div>
 
       <div>
-        <QuoteCardMenu date={date} />
+        <QuoteCardMenu
+          quoteContent={quote_content}
+          quoteAuthor={quote_author}
+          date={date}
+        />
       </div>
     </div>
   );
 };
 
-export default Quote;
+export default QuoteCard;
